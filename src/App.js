@@ -27,7 +27,8 @@ class App {
                     "[ERROR] 커스텀 구분자 형식이 올바르지 않습니다."
                 );
             }
-            numbers = rest.split(custom);
+            const regex = new RegExp(`[${custom},:]`);
+            numbers = rest.split(regex);
         } else {
             numbers = input.split(/[,|:]/);
         }

@@ -16,6 +16,11 @@ class App {
         } else {
             numbers = input.split(/[,|:]/);
         }
+
+        const parsedNumbers = numbers.map((num) => {
+            const parsed = Number(num);
+            return parsed;
+        });
 }
 
 export default App;

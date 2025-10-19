@@ -6,6 +6,8 @@ class App {
             const input = await Console.readLineAsync(
                 "덧셈할 문자열을 입력해 주세요.\n"
             );
+            const result = this.calculate(input);
+            Console.print(`결과 : ${result}`);
         } catch (error) {
             if (error instanceof Error && error.message.startsWith("[ERROR]")) {
                 throw error;
@@ -14,6 +16,8 @@ class App {
     }
 
     calculate(input) {
+        if (!input || input.trim() === "") return 0;
+
         let numbers = [];
 
         if (input.startsWith("//")) {

@@ -21,6 +21,10 @@ class App {
             const parsed = Number(num);
             return parsed;
         });
+
+        const sum = parsedNumbers.reduce((acc, cur) => acc + cur, 0);
+        return sum;
+    }
 }
 
 export default App;
